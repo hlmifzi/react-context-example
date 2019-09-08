@@ -1,3 +1,4 @@
 import {createContext} from 'react'
 
-export default createContext({bahasa: 'english'})
+export const LanguageContext = createContext({bahasa: 'english'})
+export const ColorContext = createContext('success')

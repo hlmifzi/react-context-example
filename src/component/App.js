@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import CreateUser from "./ButtonLanguage";
-import LanguageContext from "../contexts/LanguageContext";
+import { LanguageContext, ColorContext } from "../contexts/LanguageContext";
 
 
 export default class App extends Component {
-  state = {bahasa: "english" }
+  state = { bahasa: "english", color:'success' }
 
   render() {
     return (
       <div>
-        <button onClick={() => this.setState({bahasa: 'english'})}>English</button>
-        <button onClick={() => this.setState({bahasa: 'indonesia'})}>Indonesia</button>
-      <LanguageContext.Provider value={this.state}>
-        <CreateUser/>
-      </LanguageContext.Provider>
+        <button onClick={() => this.setState({ bahasa: 'english' })}>English</button>
+        <button onClick={() => this.setState({ bahasa: 'indonesia' })}>Indonesia</button>
+        <ColorContext.Provider value={this.state.color} >
+          <LanguageContext.Provider value={this.state.bahasa}>
+            <CreateUser />
+          </LanguageContext.Provider>
+        </ColorContext.Provider>
       </div>
     )
   }
