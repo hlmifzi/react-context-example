@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import CreateUser from "./ResultButton";
+import CreateUser from "./react-context/ResultButton";
 import { LanguageStore } from "../contexts/LanguageContext";
-import ButtonSelector from "./ButtonSelector";
+import ButtonSelector from "./react-context/ButtonSelector";
+import Hooks from './react-hooks/Hooks'
 
 
 export default class App extends Component {
@@ -10,8 +11,13 @@ export default class App extends Component {
     return (
       <div>
         <LanguageStore>
+          <p>React Context</p>
           <ButtonSelector />
           <CreateUser />
+
+          <br/>
+          <p>React Hooks (useState, useEffect)</p>
+          <Hooks/>
         </LanguageStore>
       </div>
     )

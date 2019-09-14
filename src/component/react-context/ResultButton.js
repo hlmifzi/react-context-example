@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { LanguageContext } from "../contexts/LanguageContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import { Button } from "shards-react";
 
 export default class ResultButton extends Component {
@@ -11,7 +11,7 @@ export default class ResultButton extends Component {
     const color = this.context.color
 
     return (
-      <div class="ui inverted segment">
+      <div className="ui inverted segment">
         <Button theme={`${color}`}>
           {text}
         </Button>
