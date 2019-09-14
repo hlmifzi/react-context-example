@@ -1,15 +1,15 @@
 import React, { useState, Fragment } from 'react'
+import HooksButton from "./HooksButton";
 import ResourceLists from "./ResourceLists"
+import UserLists from "./UserLists"
 
 
 const Hooks = () => {
   const [resource, setresource] = useState({methode:'posts'})
   return (
     <Fragment>
-      <div>
-        <button onClick={() => setresource({methode:'posts'})}>posts</button>
-        <button onClick={() => setresource({methode:'todos'})}>todos</button>
-      </div>
+      <UserLists />
+      <HooksButton setresource={setresource}/>
       <ResourceLists resource = {resource} />
     </Fragment>
   )

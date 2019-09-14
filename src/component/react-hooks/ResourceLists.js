@@ -1,29 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { useResource } from "./myHooks/useResource";
 
 
 const ResourceLists = ({ resource }) => {
 
-  const [resources, setResources] = useState([])
-
-  const fetch = async resource => {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/${resource.methode}`)
-
-    setResources(res.data)
-  }
-
-  useEffect(
-    () => {
-      fetch(resource)
-    }
-    ,
-    [resource.methode]
-  )
+  const resources = useResource(resource)
 
   return (
-    <div>
+    <ul>
       {resources.length}
-    </div>
+      {resources.map((v, i) => <li key={i}> {i + 1+")"} {v.title}</li>)}
+    </ul>
   )
 }
 
