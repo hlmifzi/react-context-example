@@ -8,8 +8,6 @@ import Hooks from './react-hooks/Hooks'
 import TodoApp from './react-usereducer-standard/TodoApp'
 import { useState, StateInspector } from "reinspect"
 
-
-
 function App() {
   return (
     <StateInspector name="Example">
@@ -47,4 +45,5 @@ const Apps = () => {
 }
 
 
+// export default hot(module)(App);
 export default hot(module)(App);

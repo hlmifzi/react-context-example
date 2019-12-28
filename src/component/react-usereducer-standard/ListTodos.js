@@ -8,7 +8,6 @@ const ListTodos = () => {
     const handleCompletedTas = (idx) => {
         dispatch({ type: "toggle-todo", idx })
     }
-    console.log("TCL: ListTodos -> state.todos", state.todos)
 
     return (
         <>

@@ -5,7 +5,7 @@ export const initialState = localStorage.getItem('reduxState') ?
         todoCount: 0
     }
 
-const setReduxState = (obj) => localStorage.setItem('reduxState', JSON.stringify(obj))
+const setReduxStore = (obj) => localStorage.setItem('reduxState', JSON.stringify(obj))
 
 export const reducer = (state, action) => {
     let res
@@ -15,7 +15,7 @@ export const reducer = (state, action) => {
                 todos: [...state.todos, { text: action.text, completed: false }],
                 todoCount: state.todoCount + 1
             };
-            setReduxState(res)
+            setReduxStore(res)
             return res
         case "toggle-todo":
             res = {
@@ -24,7 +24,12 @@ export const reducer = (state, action) => {
                 ),
                 todoCount: state.todoCount
             }
-            setReduxState(res)
+            setReduxStore(res)
+            return res
+        case "get-list":
+            res = action.payload
+
+            setReduxStore(res)
             return res
         default:
             return state;
